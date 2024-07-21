@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Job Application Tracker</title>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('render_home') }}">Home</a>
+        <a href="{{ url_for('get_applications') }}">View all applications</a>
+        <a href="{{ url_for('log_out') }}">Log out</a>
+    </nav>
+    <h2>Enter rejection date:</h2>
+    <div class="form">
+    <form action="{{ url_for('add_rejection_date_to_database')}}"method="POST">
+        <input type="hidden" name="application_id" id="application_id" value="{{application_id}}">
+        <label for="rejection_date">Date of rejection:</label>
+        <input type="date" name="rejection_date" id="rejection_date" required><br>
+        <button type="submit">Submit</button>
+    </form>
+    </div>
+</body>
+</html>

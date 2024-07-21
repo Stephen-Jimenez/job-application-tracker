@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Job Application Tracker</title>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('get_applications') }}">View all applications</a>
+        <a href="{{ url_for('get_unrejected_applications') }}">View unrejected applications</a>
+        <a href="{{ url_for('get_rejected_applications') }}">View rejected applications</a>
+        <a href="/logout">Log out</a>
+    </nav>
+    <h1>Welcome, {{ g.first_name }} {{ g.last_name }}, you are logged in.</h1>
+    <h2>Enter a new application:</h2>
+    <div class="form">
+        <form action="{{ url_for('add_application') }}" method="POST">
+            <input type="hidden" name="applicant_id" id="applicant_id" value="{{ g.applicant_id }}">
+            <label for="position">Position</label>
+            <input type="text" name="position" id="position" required>
+            <label for="company">Company Name</label>
+            <input type="text" name="company" id="company" required>
+            <label for="application_date">Application Date</label>
+            <input type="date" name="application_date" id="application_date" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+body {
+    background-color: #a7a9ab;
+    margin: 0;
+    padding: 0;
+    color: #121212;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    margin-top: 5px;
+    text-align: center;
+}
+
+h1, h2, p {
+    text-align: center;
+}
+
+label, input {
+    display: block;
+}
+
+nav {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-around;
+    background-color: #d9d8d4;
+    padding: 10px;
+}
+
+.wrapper {
+    border: 1px solid black;
+    margin-bottom: 3px;
+    text-align: center;
+}
+
+.form {
+    width: fit-content;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}

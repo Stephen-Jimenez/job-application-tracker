@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Job Application Tracker</title>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('render_home') }}">Home</a>
+        <a href="{{ url_for('get_applications') }}">View all applications</a>
+        <a href="{{ url_for('log_out') }}">Log out</a>
+    </nav>
+    <h2>Enter interview details:</h2>
+    <div class="form">
+        <form action="{{ url_for('add_interview_to_database')}}"method="POST">
+            <input type="hidden" name="application_id" id="application_id" value="{{application_id}}">
+            <label for="interviewer_name">Name of interviewer:</label>
+            <input type="text" name="interviewer_name" id="interviewer_name" required><br>
+            <label for="interview_date">Date of interview:</label>
+            <input type="date" name="interview_date" id="interview_date" required><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <title>Job Application Tracker</title>
+</head>
+<body>
+    <h1>Welcome to Job Application Tracker</h1>
+    <h2>Log in:</h2>
+    {% if login_error %}
+    <p><strong>{{login_error}}</strong></p>
+    {% endif %}
+    <div class="form">
+        <form action="{{ url_for('log_in') }}" method="POST">
+            <label for="email">Email address:</label>
+            <input type="email" name="email" id="email" required>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+            <button>Submit</button>
+        </form>
+    </div>
+    <h2>Register:</h2>
+    {% if error %}
+    <p><strong>{{error}}</strong></p>
+    {% endif %}
+    <div class="form">
+        <form action="{{ url_for('register_user') }}" method="POST">
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name" id="first_name" required>
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name" id="last_name" required>
+            <label for="email">Email Address:</label>
+            <input type="email" name="email" id="email" required>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required minlength="5">
+            <label for="password_confirm">Confirm Password:</label>
+            <input type="password" name="password_confirm" id="password_confirm" required>
+            <button>Submit</button>
+        </form>
+    </div>
+</body>
+</html>
