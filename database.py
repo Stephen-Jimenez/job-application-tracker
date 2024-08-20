@@ -9,10 +9,10 @@ class connect_to_database:
             cursorclass=pymysql.cursors.DictCursor,
             db="ApplicationTrackerApp",
             host="mysql-1e6432be-application-tracker.g.aivencloud.com",
-            password="AVNS_GjZJg_kfi_7XHlZURGy",
+            password="XXXXX",
             read_timeout=timeout,
-            port=26554,
-            user="avnadmin",
+            port=00000,
+            user="XXXXX",
             write_timeout=timeout,
         )
         self.cursor = pymysql.cursors.Cursor(self.cnx) 

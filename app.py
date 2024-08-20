@@ -3,7 +3,7 @@ from flask_bcrypt import Bcrypt
 from database import connect_to_database
 
 app = Flask(__name__)
-app.secret_key = "abcdefghijklmnopqrstuvwxyz"
+app.secret_key = "XXXXX"
 bcrypt = Bcrypt(app)
 
 @app.before_request
